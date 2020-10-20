@@ -46,7 +46,7 @@ def get_image_content(url):
 
 
 def main(num=None, depth=None):
-    base_url = 'https://www.dbmeinv.com/index.htm?'
+    base_url = 'https://www.dbmeinv.com/?'
     for i in range(1, depth):
         url = base_url + 'cid=' + str(num) + '&' + 'pager_offset=' + str(i)
         # print(url)
