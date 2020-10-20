@@ -1,12 +1,12 @@
 :start
 
-rem "ÉèÖÃÔ¶³ÌÖ÷»úIP¡¢ÓÃ»§Ãû¡¢ÃÜÂë¡¢ÎÄ¼şÂ·¾¶"
+rem "è®¾ç½®è¿œç¨‹ä¸»æœºIPã€ç”¨æˆ·åã€å¯†ç ã€æ–‡ä»¶è·¯å¾„"
 set ftphost=10.108.17.27
 set username=tan
 set password=123456
 set filepath=/home/backup/database/3306
-rem "ÉèÖÃ±¾µØÂ·¾¶"
-set Ldir=D:/ÏîÄ¿/2020/MEBÁ¢¿â/Êı¾İ¿â±¸·İ
+rem "è®¾ç½®æœ¬åœ°è·¯å¾„"
+set Ldir=D:/é¡¹ç›®/2020/MEBç«‹åº“/æ•°æ®åº“å¤‡ä»½
 set timevar=%time:~0,2%
 if /i %timevar% LSS 10 (
 	set timevar=0%time:~1,1%

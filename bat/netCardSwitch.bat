@@ -26,25 +26,25 @@ if '%errorlevel%' NEQ '0' (
  
 cls
 @ECHO OFF
-title ÆôÓÃ»ò½ûÓÃ±¾µØÁ¬½Ó
+title å¯ç”¨æˆ–ç¦ç”¨æœ¬åœ°è¿æ¥
 CLS
 color 0a
 GOTO MENU
 :MENU
 ECHO.
-ECHO. ==============ÆôÓÃ½ûÓÃ±¾µØÁ¬½Ó==============
+ECHO. ==============å¯ç”¨ç¦ç”¨æœ¬åœ°è¿æ¥==============
 ECHO.
-ECHO. 1 ½ûÓÃÒÔÌ«Íø
-ECHO. 2 ÆôÓÃÒÔÌ«Íø
-ECHO. 3 ½ûÓÃĞéÄâ»ú
-ECHO. 4 ÆôÓÃĞéÄâ»ú
-ECHO. 5 ½ûÓÃWLAN
-ECHO. 6 ÆôÓÃWLAN
-ECHO. 10 ÍË ³ö
+ECHO. 1 ç¦ç”¨ä»¥å¤ªç½‘
+ECHO. 2 å¯ç”¨ä»¥å¤ªç½‘
+ECHO. 3 ç¦ç”¨è™šæ‹Ÿæœº
+ECHO. 4 å¯ç”¨è™šæ‹Ÿæœº
+ECHO. 5 ç¦ç”¨WLAN
+ECHO. 6 å¯ç”¨WLAN
+ECHO. 10 é€€ å‡º
 ECHO. ==========================================
 ECHO.
 ECHO.
-echo. ÇëÊäÈëÑ¡ÔñÏîÄ¿µÄĞòºÅ£º
+echo. è¯·è¾“å…¥é€‰æ‹©é¡¹ç›®çš„åºå·ï¼š
 set /p ID=
 if "%id%"=="1" goto stopEth
 if "%id%"=="2" goto startEth
@@ -55,28 +55,28 @@ if "%id%"=="6" goto startWlan
 if "%id%"=="10" exit
 PAUSE
 :stopEth
-echo ½ûÓÃÒÔÌ«Íø
-netsh interface set interface name="ÒÔÌ«Íø" admin=DISABLED
+echo ç¦ç”¨ä»¥å¤ªç½‘
+netsh interface set interface name="ä»¥å¤ªç½‘" admin=DISABLED
 goto MENU
 :startEth
-echo ÆôÓÃÒÔÌ«Íø
-netsh interface set interface name="ÒÔÌ«Íø" admin=ENABLED
+echo å¯ç”¨ä»¥å¤ªç½‘
+netsh interface set interface name="ä»¥å¤ªç½‘" admin=ENABLED
 GOTO MENU
 :stopVM
-echo ½ûÓÃĞéÄâ»ú
+echo ç¦ç”¨è™šæ‹Ÿæœº
 netsh interface set interface name="VMware Network Adapter VMnet1" admin=DISABLED
 netsh interface set interface name="VMware Network Adapter VMnet8" admin=DISABLED
 goto MENU
 :startVM
-echo ÆôÓÃĞéÄâ»ú
+echo å¯ç”¨è™šæ‹Ÿæœº
 netsh interface set interface name="VMware Network Adapter VMnet1" admin=ENABLED
 netsh interface set interface name="VMware Network Adapter VMnet8" admin=ENABLED
 GOTO MENU
 :stopWlan
-echo ½ûÓÃWLAN
+echo ç¦ç”¨WLAN
 netsh interface set interface name="WLAN" admin=DISABLED
 goto MENU
 :startWlan
-echo ÆôÓÃWLAN
+echo å¯ç”¨WLAN
 netsh interface set interface name="WLAN" admin=ENABLED
 GOTO MENU
