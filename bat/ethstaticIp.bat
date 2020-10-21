@@ -1,6 +1,6 @@
 @echo //-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-@echo //  ã€å›ºå®šè®¾ç½®ã€‘
-@echo //  è®¾ç½®IPï¼Œå­ç½‘æ©ç ï¼Œç½‘å…³
+@echo //  ¡¾¹Ì¶¨ÉèÖÃ¡¿
+@echo //  ÉèÖÃIP£¬×ÓÍøÑÚÂë£¬Íø¹Ø
 @echo //-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 %1 mshta vbscript:CreateObject("Shell.Application").ShellExecute("cmd.exe","/c %~s0 ::","","runas",1)(window.close)&&exit
@@ -9,12 +9,12 @@ cd /d "%~dp0"
 ::netsh interface ip set address name="WLAN" source=static addr=192.168.0.230 mask=255.255.255.0 gateway=192.168.0.1 
 
 ::netsh interface ip set address name="WLAN" source=static addr=192.168.0.230 mask=255.255.255.0 
-netsh interface ip set address name="ä»¥å¤ªç½‘" source=static addr=172.30.126.109 mask=255.255.255.0 gateway=172.30.126.1
+netsh interface ip set address name="ÒÔÌ«Íø" source=static addr=172.30.126.105 mask=255.255.255.0 gateway=172.30.126.1
 
 @echo //-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-@echo //  è®¾ç½®DNS
+@echo //  ÉèÖÃDNS
 @echo //-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 ::netsh interface ip set dns "WLAN" static 114.114.114.114 primary 
 ::netsh interface ip add dns "WLAN" 8.8.8.8 
-@echo //  å›ºå®šIPè®¾ç½®å®Œæˆï¼
+@echo //  ¹Ì¶¨IPÉèÖÃÍê³É£¡
 @pause

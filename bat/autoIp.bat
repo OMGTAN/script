@@ -1,6 +1,6 @@
 @echo //-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-@echo //  ã€è‡ªåŠ¨è·å–ã€‘
-@echo //  è®¾ç½®IPï¼Œå­ç½‘æ©ç ï¼Œç½‘å…³
+@echo //  ¡¾×Ô¶¯»ñÈ¡¡¿
+@echo //  ÉèÖÃIP£¬×ÓÍøÑÚÂë£¬Íø¹Ø
 @echo //-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 %1 mshta vbscript:CreateObject("Shell.Application").ShellExecute("cmd.exe","/c %~s0 ::","","runas",1)(window.close)&&exit
@@ -8,12 +8,12 @@ cd /d "%~dp0"
 
 
 netsh interface ip set address name="WLAN" source=dhcp 
-netsh interface ip set address name="ä»¥å¤ªç½‘" source=dhcp 
+netsh interface ip set address name="ÒÔÌ«Íø" source=dhcp 
 
 @echo //-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-@echo //  è®¾ç½®DNS
+@echo //  ÉèÖÃDNS
 @echo //-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 netsh interface ip set dns name = "WLAN" static addr = none   
-netsh interface ip set dns name = "ä»¥å¤ªç½‘" static addr = none 
-@echo //  è‡ªåŠ¨è·å–IPè®¾ç½®å®Œæˆï¼
+netsh interface ip set dns name = "ÒÔÌ«Íø" static addr = none 
+@echo //  ×Ô¶¯»ñÈ¡IPÉèÖÃÍê³É£¡
 @pause
