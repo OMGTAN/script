@@ -1,29 +1,31 @@
 :start
 
-rem "è®¾ç½®è¿œç¨‹ä¸»æœºIPã€ç”¨æˆ·åã€å¯†ç ã€æ–‡ä»¶è·¯å¾„"
+rem "ÉèÖÃÔ¶³ÌÖ÷»úIP¡¢ÓÃ»§Ãû¡¢ÃÜÂë¡¢ÎÄ¼þÂ·¾¶"
 set ftphost=10.108.17.27
 set username=tan
 set password=123456
 set filepath=/home/backup/database/3306
-rem "è®¾ç½®æœ¬åœ°è·¯å¾„"
-set Ldir=D:/é¡¹ç›®/2020/MEBç«‹åº“/æ•°æ®åº“å¤‡ä»½
+rem "ÉèÖÃ±¾µØÂ·¾¶"
+set Ldir=D:/ÏîÄ¿/2020/MEBÁ¢¿â/Êý¾Ý¿â±¸·Ý
 set timevar=%time:~0,2%
+set tmpScript=sftp.text
 if /i %timevar% LSS 10 (
 	set timevar=0%time:~1,1%
 )
 set filename=db_%date:~0,4%-%date:~5,2%-%date:~8,2%-%timevar%.sql
 
 
-echo cd %filepath% >>sftp.text
 
-echo lcd %Ldir% >>sftp.text
+echo cd %filepath% >>tmpScript
 
-echo get %filename% >>sftp.text
+echo lcd %Ldir% >>tmpScript
 
-echo bye >>sftp.text
+echo get %filename% >>tmpScript
+
+echo bye >>tmpScript
 
 
 
-psftp -P 22 %username%@%ftphost% -pw %password% -b sftp.text
+psftp -P 22 %username%@%ftphost% -pw %password% -b tmpScript
 
-del sftp.text
+del tmpScript
